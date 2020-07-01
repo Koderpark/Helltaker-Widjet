@@ -114,5 +114,12 @@
   <ItemGroup>
     <Resource Include="Resources\Background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sprite\말리나.png" />
+    <Resource Include="Resources\Sprite\저스티스.png" />
+    <Resource Include="Resources\Sprite\저지먼트.png" />
+    <Resource Include="Resources\Sprite\즈드라다.png" />
+    <Resource Include="Resources\Sprite\케르베로스.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

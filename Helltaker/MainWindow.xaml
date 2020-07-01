@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Helltaker"
         mc:Ignorable="d"
-        Title="헬-테이커" Height="500" Width="240"
+        Title="헬-테이커" Height="500" Width="300"
         WindowStyle="None"
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen"
@@ -26,16 +26,17 @@
                 </ContentControl>
             </Button>
         </Grid>
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Height="30" Margin="5">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Height="30" Margin="5">
             <Border BorderThickness="1" Grid.Row="0" CornerRadius="10" Background="#FF050720" />
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEAEAEA" FontSize="16" FontFamily="Yu Gothic UI">졸린 악마, 판데모니카</TextBlock>
+            <Label x:Name="Title" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEAEAEA" FontSize="16" FontFamily="Yu Gothic UI" Content="피곤한 악마, 판데모니카"></Label>
         </Grid>
         <Grid Margin="5 40 5 70">
-            <Border BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="20" Background="#FFEEEEEE"/>
-            <Image Source="/Resources/Sprite/판데모니카.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Border BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="20" Background="#FFEEEEEE" Padding="20 20 20 0"/>
+            <Image x:Name="Image" Source="/Resources/Sprite/판데모니카.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="1">
+            </Image>
         </Grid>
 
-        <Grid HorizontalAlignment="Center" Width="100" Height="60" VerticalAlignment="Bottom" Margin="5">
+        <Grid HorizontalAlignment="Center" Width="160" Height="60" VerticalAlignment="Bottom" Margin="5">
             <Border BorderThickness="1" Grid.Row="0" CornerRadius="20" Background="#FF050720" />
             <Button Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent">
                 <ContentControl>
@@ -50,7 +51,7 @@
             <Button Style="{StaticResource ButtonStyle}" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent">
                 <ContentControl>
                     <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
-                        <Image Source="/Resources/Ui/next.png" Margin="0" />
+                        <Image Source="/Resources/Ui/next.png" Margin="0" MouseDown="Next_Clicked" />
                     </StackPanel>
                 </ContentControl>
             </Button>
@@ -60,7 +61,7 @@
             <Button Style="{StaticResource ButtonStyle}" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent">
                 <ContentControl>
                     <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
-                        <Image Source="/Resources/Ui/previous.png" Margin="0"/>
+                        <Image Source="/Resources/Ui/previous.png" Margin="0" MouseDown="Previous_Clicked"/>
                     </StackPanel>
                 </ContentControl>
             </Button>

@@ -14,4 +14,4 @@ E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Helltaker.csproj.CoreCompileInput
 E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Helltaker.exe
 E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Helltaker.pdb
 E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\App.baml
-E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Dictionary1.baml
+E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Style.baml
