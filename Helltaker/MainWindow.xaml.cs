@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace Helltaker
 {
@@ -38,6 +39,12 @@ namespace Helltaker
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+        public void currenttimer()
+        {
+
         }
 
         public void ReloadScreen()
@@ -69,6 +76,11 @@ namespace Helltaker
             index--;
             if (index == -1) index = 8;
             ReloadScreen();
+        }
+
+        private void addchibi(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

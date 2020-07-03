@@ -15,3 +15,5 @@ E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Helltaker.exe
 E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Helltaker.pdb
 E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\App.baml
 E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Style.baml
+E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Chibi.g.cs
+E:\Github\Helltaker-Widjet\Helltaker\obj\Debug\Chibi.baml
