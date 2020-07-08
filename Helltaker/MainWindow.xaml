@@ -38,10 +38,10 @@
 
         <Grid HorizontalAlignment="Center" Width="160" Height="60" VerticalAlignment="Bottom" Margin="5">
             <Border BorderThickness="1" Grid.Row="0" CornerRadius="20" Background="#FF050720" />
-            <Button Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent" MouseDown="addchibi">
+            <Button Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent">
                 <ContentControl>
                     <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
-                        <Image Source="/Resources/Ui/AddChibi.png" Margin="0"  />
+                        <Image Source="/Resources/Ui/AddChibi.png" Margin="0" Width="160" MouseDown="Addchibi" />
                     </StackPanel>
                 </ContentControl>
             </Button>

@@ -42,11 +42,6 @@ namespace Helltaker
 
         }
 
-        public void currenttimer()
-        {
-
-        }
-
         public void ReloadScreen()
         {
             object TitleNode = this.FindName("Title");
@@ -78,9 +73,10 @@ namespace Helltaker
             ReloadScreen();
         }
 
-        private void addchibi(object sender, MouseButtonEventArgs e)
+        private void Addchibi(object sender, MouseButtonEventArgs e)
         {
-
+            Chibi window = new Chibi();
+            window.Show();
         }
     }
 }
