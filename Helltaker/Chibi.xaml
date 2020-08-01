@@ -11,7 +11,7 @@
         Background="Transparent"
         ShowInTaskbar="True"
         >
-    <Grid>
+    <Grid MouseRightButtonDown="DeleteForm" Background="Aqua" PreviewMouseLeftButtonDown="DragForm">
         <Image x:Name="Sticker"/>
     </Grid>
 </Window>

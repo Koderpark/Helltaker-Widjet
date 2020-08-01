@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Media;
 
 namespace Helltaker
 {
@@ -22,7 +23,21 @@ namespace Helltaker
     /// </summary>
     public partial class MainWindow : Window
     {
-        public string[] NameIndex = new string[] { "판데모니카", "모데우스", "케르베로스", "말리나", "즈드라다", "아자젤", "저스티스", "루시퍼", "저지먼트"};
+
+        //잡다한것들 선언부
+        System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
+        SoundPlayer click = new SoundPlayer(Properties.Resources.clicksound);
+        public string[] NameIndex = new string[] { 
+            "판데모니카", 
+            "모데우스", 
+            "케르베로스", 
+            "말리나", 
+            "즈드라다", 
+            "아자젤", 
+            "저스티스", 
+            "루시퍼", 
+            "저지먼트"
+        };
         public string[] TitleString = new string[] {
             "피곤한 악마, 판데모니카",
             "음란한 악마, 모데우스",
@@ -40,18 +55,26 @@ namespace Helltaker
         {
             InitializeComponent();
 
+            ni.Icon = Properties.Resources.icon;
+            ni.Visible = true;
+            ni.DoubleClick += delegate (object sender, EventArgs args)
+            {
+                this.Show();
+                this.WindowState = WindowState.Normal;
+            };
         }
-
+        private void Next_Clicked(object sender, MouseButtonEventArgs e) { index++; if (index == 9) index = 0; ReloadScreen(); }
+        private void Previous_Clicked(object sender, MouseButtonEventArgs e) { index--; if (index == -1) index = 8; ReloadScreen(); }
         public void ReloadScreen()
         {
             object TitleNode = this.FindName("Title");
+            object ImageNode = this.FindName("Image");
+
             if (TitleNode is Label)
             {
-                // Following executed if Text element was found.
                 Label title = TitleNode as Label;
                 title.Content = TitleString[index];
             }
-            object ImageNode = this.FindName("Image");
             if(ImageNode is Image)
             {
                 Image image = ImageNode as Image;
@@ -59,24 +82,23 @@ namespace Helltaker
             }
         }
 
-        private void Next_Clicked(object sender, MouseButtonEventArgs e)
-        {
-            index++;
-            if (index == 9) index = 0;
-            ReloadScreen();
-        }
-
-        private void Previous_Clicked(object sender, MouseButtonEventArgs e)
-        {
-            index--;
-            if (index == -1) index = 8;
-            ReloadScreen();
-        }
-
         private void Addchibi(object sender, MouseButtonEventArgs e)
         {
             Chibi window = new Chibi();
             window.Show();
+
+            click.Play();
+        }
+
+        private void DragForm(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+            e.Handled = true;
+        }
+
+        private void MinimizeTray(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

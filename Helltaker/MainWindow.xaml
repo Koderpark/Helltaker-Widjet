@@ -9,27 +9,30 @@
         WindowStyle="None"
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen"
-        BorderBrush="black">
-
+        BorderBrush="black"
+        Icon="Resources/main.ico">
 
 
 
 
     <Grid Background="#FFA23037">
-        <Grid HorizontalAlignment="Right" Width="30" Height="30" VerticalAlignment="Top" Margin="5">
-            <Border BorderThickness="1" Grid.Row="0" CornerRadius="10" Background="#FF050720" />
-            <Button Style="{StaticResource ButtonStyle}" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent">
-                <ContentControl>
-                    <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
-                        <Image Source="/Resources/Ui/exit.png" Margin="0" />
-                    </StackPanel>
-                </ContentControl>
-            </Button>
+        <Grid Margin="0,0,0,225" Height="50" VerticalAlignment="Top" PreviewMouseLeftButtonDown="DragForm" >
+            <Grid HorizontalAlignment="Right" Width="30" Height="30" VerticalAlignment="Top" Margin="5" MouseLeftButtonDown="MinimizeTray">
+                <Border BorderThickness="1" Grid.Row="0" CornerRadius="10" Background="#FF050720" />
+                <Button Style="{StaticResource ButtonStyle}" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent">
+                    <ContentControl>
+                        <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
+                            <Image Source="/Resources/Ui/exit.png" Margin="0" />
+                        </StackPanel>
+                    </ContentControl>
+                </Button>
+            </Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Height="30" Margin="5">
+                <Border BorderThickness="1" Grid.Row="0" CornerRadius="10" Background="#FF050720" />
+                <Label x:Name="Title" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEAEAEA" FontSize="16" FontFamily="Yu Gothic UI" Content="피곤한 악마, 판데모니카"></Label>
+            </Grid>
         </Grid>
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Height="30" Margin="5">
-            <Border BorderThickness="1" Grid.Row="0" CornerRadius="10" Background="#FF050720" />
-            <Label x:Name="Title" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEAEAEA" FontSize="16" FontFamily="Yu Gothic UI" Content="피곤한 악마, 판데모니카"></Label>
-        </Grid>
+
         <Grid Margin="5 40 5 70">
             <Border BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="20" Background="#FFEEEEEE" Padding="20 20 20 0"/>
             <Image x:Name="Image" Source="/Resources/Sprite/판데모니카.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="1">

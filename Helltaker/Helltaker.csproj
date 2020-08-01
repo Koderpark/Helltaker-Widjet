@@ -34,9 +34,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>main.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -127,6 +132,15 @@
     <Resource Include="Resources\Sprite\저지먼트.png" />
     <Resource Include="Resources\Sprite\즈드라다.png" />
     <Resource Include="Resources\Sprite\케르베로스.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Sound\sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

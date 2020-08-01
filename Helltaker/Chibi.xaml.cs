@@ -21,5 +21,21 @@ namespace Helltaker
         {
             InitializeComponent();
         }
+
+        private void DeleteWindow(object sender, MouseButtonEventArgs e)
+        {
+            Window.GetWindow(this).Close();
+        }
+
+        private void DeleteForm(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DragForm(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+            e.Handled = true;
+        }
     }
 }
