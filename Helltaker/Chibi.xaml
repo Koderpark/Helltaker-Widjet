@@ -9,9 +9,9 @@
         WindowStyle = "None"
         AllowsTransparency = "True"
         Background="Transparent"
-        ShowInTaskbar="True"
+        ShowInTaskbar="False"
         >
-    <Grid MouseRightButtonDown="DeleteForm" Background="Aqua" PreviewMouseLeftButtonDown="DragForm">
+    <Button Style="{StaticResource ButtonStyle}" Background="Transparent" BorderBrush="Transparent" Foreground="Transparent" PreviewMouseLeftButtonDown="DragForm" PreviewMouseDoubleClick="ExitForm">
         <Image x:Name="Sticker"/>
-    </Grid>
+    </Button>
 </Window>

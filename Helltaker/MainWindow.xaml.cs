@@ -21,12 +21,13 @@ namespace Helltaker
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
+
+
     public partial class MainWindow : Window
     {
 
         //잡다한것들 선언부
         System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
-        SoundPlayer click = new SoundPlayer(Properties.Resources.clicksound);
         public string[] NameIndex = new string[] { 
             "판데모니카", 
             "모데우스", 
@@ -50,19 +51,18 @@ namespace Helltaker
             "고위 기소관, 저지먼트"
         };
         public int index = 0;
+        public static int syncro = 7;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            ni.Icon = Properties.Resources.icon;
-            ni.Visible = true;
-            ni.DoubleClick += delegate (object sender, EventArgs args)
-            {
-                this.Show();
-                this.WindowState = WindowState.Normal;
-            };
-        }
+            System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(0.04);
+            timer.Tick += AddFrame;
+            timer.Start();
+        }  
+
         private void Next_Clicked(object sender, MouseButtonEventArgs e) { index++; if (index == 9) index = 0; ReloadScreen(); }
         private void Previous_Clicked(object sender, MouseButtonEventArgs e) { index--; if (index == -1) index = 8; ReloadScreen(); }
         public void ReloadScreen()
@@ -84,21 +84,45 @@ namespace Helltaker
 
         private void Addchibi(object sender, MouseButtonEventArgs e)
         {
-            Chibi window = new Chibi();
+            Chibi window = new Chibi(NameIndex[index]);
             window.Show();
-
-            click.Play();
         }
 
-        private void DragForm(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-            e.Handled = true;
-        }
+        private void DragForm(object sender, MouseButtonEventArgs e) { this.DragMove(); e.Handled = true; }
 
         private void MinimizeTray(object sender, MouseButtonEventArgs e)
         {
+            this.Hide();
+            this.ShowInTaskbar = false;
 
+            System.Windows.Forms.ContextMenu menu = new System.Windows.Forms.ContextMenu();
+            ni.Icon = Properties.Resources.icon;
+            ni.Visible = true;
+            ni.ContextMenu = menu;
+            ni.Text = "헬-테이커";
+
+            System.Windows.Forms.MenuItem i0 = new System.Windows.Forms.MenuItem();
+            menu.MenuItems.Add(i0);
+            i0.Index = 0;
+            i0.Text = "만든사람 / 사용법";
+            i0.Click += delegate (object s, EventArgs e1) { System.Diagnostics.Process.Start("https://github.com/koder0205"); };
+
+            System.Windows.Forms.MenuItem i1 = new System.Windows.Forms.MenuItem();
+            menu.MenuItems.Add(i1);
+            i1.Index = 1;
+            i1.Text = "캐릭터생성창 열기";
+            i1.Click += delegate (object s, EventArgs e1) { this.Show(); this.WindowState = WindowState.Normal; ni.Visible = false; this.ShowInTaskbar = true; };
+
+            System.Windows.Forms.MenuItem i2 = new System.Windows.Forms.MenuItem();
+            menu.MenuItems.Add(i2);
+            i2.Index = 2;
+            i2.Text = "프로그램 종료하기";
+            i2.Click += delegate (object s, EventArgs e1) { System.Windows.Application.Current.Shutdown(); ni.Dispose(); };
+        }
+
+        private void AddFrame(object sender, EventArgs e)
+        {
+            syncro = (syncro + 1) % 12;
         }
     }
 }
