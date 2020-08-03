@@ -34,7 +34,7 @@
         </Grid>
 
         <Grid Margin="5 40 5 70">
-            <Border BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="20" Background="#FFEEEEEE" Padding="20 20 20 0"/>
+            <Border BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="10" Background="#FFEEEEEE" Padding="20 20 20 0"/>
             <Image x:Name="Image" Source="/Resources/Sprite/판데모니카.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="1">
             </Image>
         </Grid>
