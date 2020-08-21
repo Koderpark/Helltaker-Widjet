@@ -5,5 +5,5 @@
 https://blog.naver.com/koder0205/222049636539
 
 ## 여기서 사용할수 있어요!
-**프로그램 실행 파일** Hell-taker.exe를 실행해주세요!  
+**프로그램 실행 파일** Helltaker/obj/Release/Hell-taker.exe 를 실행해주세요!  
 **프로그램 소스 코드** Helltaker/ 폴더 내부에 있습니다  
